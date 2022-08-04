@@ -12,6 +12,8 @@ def position_encoding_init(n_position, emb_dim):
     position_enc = np.array([
         [pos / np.power(10000, 2 * (j // 2) / emb_dim) for j in range(emb_dim)]
         for pos in range(1,n_position+1)])
+
+    position_enc = np.array([[pos / np.power(10000, 2 * (j // 2) / emb_dim) for j in range(emb_dim)]  for pos in range(1,n_position+1)])
     
 
     position_enc[1:, 0::2] = np.sin(position_enc[1:, 0::2]) # dim 2i
@@ -34,7 +36,7 @@ def position_encoding(solutions, embedding_dim, device):
      index = [torch.nonzero(solutions.long() == i)[:,1][:,None].expand(batch_size, embedding_dim)
                  for i in solutions[0].sort()[0]]
      
-     index = torch.stack(index, 1)
+     index = torch.stack(index, 1).to(device)
     
      # return 
      return torch.gather(position_enc, 1, index).clone()

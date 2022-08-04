@@ -1,0 +1,1202 @@
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+Routed all 10 nets. Wire Length = 269
+================================================================================
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRRRR-UUUUUUU+L
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) LLLL-UUUUUUUUUUUUUUUUUUUU+RRRRRRRRR-DDDDDDDDDDDDDDDDD+R
+6 (6, 9) (12, 18) None
+Only routed 9 of 10 nets.
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 287
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+Routed all 10 nets. Wire Length = 275
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUU+R-U
+Routed all 10 nets. Wire Length = 325
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+6 (6, 9) (12, 18) UUUU+RRRRRRRR-DDDDDDDDDD+R
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) LLLL-UUUUUUUU+RRRRRRRRRR-DDDDD
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUU+R-U
+Routed all 10 nets. Wire Length = 341
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+6 (6, 9) (12, 18) DDDDDDDDDD+RRRRRRRRR-UUUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+4 (18, 3) (15, 15) None
+Only routed 9 of 10 nets.
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+6 (6, 9) (12, 18) DDDDDDDDDD+RRRRR-UUUU+RRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 247
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+7 (9, 12) (6, 18) UUU+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+2 (9, 0) (6, 3) RRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+Routed all 10 nets. Wire Length = 275
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+Routed all 10 nets. Wire Length = 275
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 275
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+Routed all 10 nets. Wire Length = 247
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 287
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+Routed all 10 nets. Wire Length = 247
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+Routed all 10 nets. Wire Length = 287
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) R-DDDDDDD+LLLLLL-UUUUUUUUUUUUUU+RRRRRRRRRRR-DDDD
+Routed all 10 nets. Wire Length = 357
+================================================================================
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 297
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+Routed all 10 nets. Wire Length = 247
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+7 (9, 12) (6, 18) UUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+Routed all 10 nets. Wire Length = 275
+================================================================================
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) R-UUUUUUUUUUUU+RR
+2 (9, 0) (6, 3) RRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) UUUU+RRRRRRRR-DDDDDDDDDD+R
+7 (9, 12) (6, 18) LLLL-UUUUUUUU+RRRRRRRRRR-DDDDD
+Routed all 10 nets. Wire Length = 331
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 247
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+Routed all 10 nets. Wire Length = 247
+================================================================================
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRRRR-UUUUUUU+L
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+a (21, 15) (18, 21) LLLL-UUUUUUUUUUUUUUUUUUUU+RRRRRRRRR-DDDDDDDDDDDDDDDDD+R
+6 (6, 9) (12, 18) None
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+Only routed 9 of 10 nets.
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+6 (6, 9) (12, 18) DDDDDDDDDD+RRRRRRRRR-UUUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+4 (18, 3) (15, 15) None
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+Only routed 9 of 10 nets.
+================================================================================
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+Routed all 10 nets. Wire Length = 297
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+Routed all 10 nets. Wire Length = 269
+================================================================================
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) R-UUUUUUUUUUUU+RR
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 315
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) DDDDDDDDDD+RRRRR-UUUU+RRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+Routed all 10 nets. Wire Length = 287
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 247
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+Routed all 10 nets. Wire Length = 275
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+6 (6, 9) (12, 18) DDDDDDDDDD+RRRRRRRRR-UUUU
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) None
+2 (9, 0) (6, 3) RRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+Only routed 9 of 10 nets.
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 269
+================================================================================
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+Routed all 10 nets. Wire Length = 287
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+Routed all 10 nets. Wire Length = 287
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) R-DDDDDDD+LLLLLL-UUUUUUUUUUUUUU+RRRRRRRRRRR-DDDD
+Routed all 10 nets. Wire Length = 329
+================================================================================
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+6 (6, 9) (12, 18) DDDDDDDDDD+RRRRRRRRR-UUUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) None
+Only routed 9 of 10 nets.
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+Routed all 10 nets. Wire Length = 297
+================================================================================
+7 (9, 12) (6, 18) UUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+Routed all 10 nets. Wire Length = 287
+================================================================================
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) R-DDDDDDD+LLLLLL-UUUUUUUUUUUUUU+RRRRRRRRRRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 329
+================================================================================
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 247
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+7 (9, 12) (6, 18) RR-DDDDDDDDDD+RRRRR-UUUUUUUUUUUUU+L
+4 (18, 3) (15, 15) None
+Only routed 9 of 10 nets.
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) R-DDDDDDD+LLLLLL-UUUUUUUUUUUUUU+RRRRRRRRRRR-DDDD
+Routed all 10 nets. Wire Length = 357
+================================================================================
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 247
+================================================================================
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 269
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+Routed all 10 nets. Wire Length = 287
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 275
+================================================================================
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 297
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 297
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+6 (6, 9) (12, 18) UUUU+RRRRRRRR-DDDDDDDDDD+R
+7 (9, 12) (6, 18) LLLL-UUUUUUUU+RRRRRRRRRR-DDDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 303
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+Routed all 10 nets. Wire Length = 287
+================================================================================
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 247
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 287
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 297
+================================================================================
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 269
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+Routed all 10 nets. Wire Length = 247
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+Routed all 10 nets. Wire Length = 269
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) UUUU+RRRRRRRR-DDDDDDDDDD+R
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+7 (9, 12) (6, 18) LLLL-UUUUUUUU+RRRRRRRRRR-DDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUU+R-U
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+Routed all 10 nets. Wire Length = 341
+================================================================================
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUU+R-U
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 325
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+Routed all 10 nets. Wire Length = 297
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+7 (9, 12) (6, 18) LLLL-UUUU+RRRRRRRRRR-D
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLLL-UUUUUUUUUUUU+RRRRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+Routed all 10 nets. Wire Length = 315
+================================================================================
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+Routed all 10 nets. Wire Length = 275
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+7 (9, 12) (6, 18) UUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 275
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 275
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+Routed all 10 nets. Wire Length = 247
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+Routed all 10 nets. Wire Length = 275
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 287
+================================================================================
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 287
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+Routed all 10 nets. Wire Length = 275
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+Routed all 10 nets. Wire Length = 275
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) LLLL-UUUU+RRRRRRRRRR-D
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+5 (15, 12) (3, 15) LLLLL-UUUUUUUUUUUU+RRRRRRRR
+Routed all 10 nets. Wire Length = 287
+================================================================================
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 247
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+6 (6, 9) (12, 18) UUUU+RRRRRRRR-DDDDDDDDDD+R
+7 (9, 12) (6, 18) LLLL-UUUUUUUU+RRRRRRRRRR-DDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+Routed all 10 nets. Wire Length = 303
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 297
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 269
+================================================================================
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+a (21, 15) (18, 21) RRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUU+R-U
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 325
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+Routed all 10 nets. Wire Length = 297
+================================================================================
+7 (9, 12) (6, 18) UUU+RRRRRR
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+7 (9, 12) (6, 18) UUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 247
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+7 (9, 12) (6, 18) LLLL-UUUU+RRRRRRRRRR-D
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLLL-UUUUUUUUUUUU+RRRRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 315
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+6 (6, 9) (12, 18) UUUU+RRRRRRRR-DDDDDDDDDD+R
+2 (9, 0) (6, 3) RRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+7 (9, 12) (6, 18) LLLL-UUUUUUUU+RRRRRRRRRR-DDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 303
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUU+R-U
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+6 (6, 9) (12, 18) UUUU+RRRRRRRR-DDDDDDDDDD+R
+7 (9, 12) (6, 18) LLLL-UUUUUUUU+RRRRRRRRRR-DDDDD
+Routed all 10 nets. Wire Length = 341
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+Routed all 10 nets. Wire Length = 269
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+6 (6, 9) (12, 18) DDDDDDDDDD+RRRRRRRRR-UUUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+4 (18, 3) (15, 15) None
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+Only routed 9 of 10 nets.
+================================================================================
+7 (9, 12) (6, 18) UUU+RRRRRR
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) DDDDDDDDDD+RRRRR-UUUU+RRRR
+2 (9, 0) (6, 3) RRR-UUU
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+Routed all 10 nets. Wire Length = 269
+================================================================================
+a (21, 15) (18, 21) RRRRRR-UUU
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+Routed all 10 nets. Wire Length = 275
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) RR-UUUUUUUUUUUU+R
+7 (9, 12) (6, 18) UUUUUUU+RRRRRR-DDDD
+6 (6, 9) (12, 18) UUUUU+RRRRRRRRRR-DDDDDDDDDDD+L
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUU+R-U
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+Routed all 10 nets. Wire Length = 325
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+6 (6, 9) (12, 18) DDDDDD+RRRRRRRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) RRRR-DDDDDDDDD+L
+7 (9, 12) (6, 18) UUU+RRRRRR
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+Routed all 10 nets. Wire Length = 275
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+7 (9, 12) (6, 18) UUU+RRRRRR
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+5 (15, 12) (3, 15) L-UUUUUUUUUUUU+RRRR
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) UUUU+RRRRRRRRRR-DDDDDDDDDD+L
+a (21, 15) (18, 21) RRRRRR-UUU
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+Routed all 10 nets. Wire Length = 297
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+3 (15, 0) (21, 6) RRRRRR-DDDDDD
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+4 (18, 3) (15, 15) DDDD+RRRRRRRRRRR-UUUUUUU+R
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+7 (9, 12) (6, 18) R-DDDDDDD+LLLLLL-UUUUUUUUUUUUUU+RRRRRRRRRRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+Routed all 10 nets. Wire Length = 357
+================================================================================
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+2 (9, 0) (6, 3) RRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+7 (9, 12) (6, 18) R-DDDDDDD+LLLLLL-UUUUUUUUUUUUUU+RRRRRRRRRRR-DDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+Routed all 10 nets. Wire Length = 329
+================================================================================
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+2 (9, 0) (6, 3) RRR-UUU
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+7 (9, 12) (6, 18) R-DDDDDDD+LLLLLL-UUUUUUUUUUUUUU+RRRRRRRRRRR-DDDD
+Routed all 10 nets. Wire Length = 329
+================================================================================
+2 (9, 0) (6, 3) RRR-UUU
+a (21, 15) (18, 21) RRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+7 (9, 12) (6, 18) UUU+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+6 (6, 9) (12, 18) U+RRRRRRRRRR-DDDDDDD+L
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+Routed all 10 nets. Wire Length = 269
+================================================================================
+4 (18, 3) (15, 15) RRRRRRRRRRRR-UUU
+9 (9, 15) (18, 18) DDDDD+RRR-DDDD
+a (21, 15) (18, 21) RRRRRR-UUU
+6 (6, 9) (12, 18) DD+RRRRRRRRR-DDDD
+3 (15, 0) (21, 6) DDDDDD+RRRRRR
+8 (0, 15) (6, 21) RRRRRR-DDDDDD
+1 (6, 0) (0, 6) UUUUUU+RRRRRR
+5 (15, 12) (3, 15) LLLL-UUUUUUUUUUUU+RRRRRRR
+7 (9, 12) (6, 18) R-DDDDDDD+LLLLLL-UUUUUUUUUUUUUU+RRRRRRRRRRR-DDDD
+2 (9, 0) (6, 3) RRR-UUU
+Routed all 10 nets. Wire Length = 329
+Successfull routed 92 of 100 times.
+Wirelength histogram: [(247, 14), (269, 18), (275, 15), (287, 13), (297, 10), (303, 3), (315, 3), (325, 4), (329, 5), (331, 1), (341, 3), (357, 3)]
