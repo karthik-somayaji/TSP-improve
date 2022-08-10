@@ -231,6 +231,7 @@ class MultiHeadDecoder(nn.Module):
         masked_compatibility = compatibility
 
         softMax = F.softmax(masked_compatibility, dim=2)  # (batch_size, 1 , graph_size)
+        #print(softMax.squeeze(1).detach())
         log_softMax = F.log_softmax(masked_compatibility, dim=2)  # (batch_size, 1 , graph_size)
         if(not is_random):
             max_indx = torch.argmax(softMax, axis=2)  # (batch_size, 1)

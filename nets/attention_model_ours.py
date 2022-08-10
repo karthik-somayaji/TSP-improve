@@ -150,7 +150,7 @@ class transformer():
         self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim)
         self.hard_update(self.attn_model_baseline, self.attn_model)  # make the baseline equal to the current model
 
-        self.optimizer = Adam(self.attn_model.parameters(), lr=5e-5)
+        self.optimizer = Adam(self.attn_model.parameters(), lr=5e-4)
 
         if('Lee_8' in self.prob_type):
             self.m = self.n = 8
@@ -166,9 +166,13 @@ class transformer():
             self.m=16
         elif('syn_4_12' in self.prob_type):
             self.n=4
-            self.m=12           
+            self.m=12
+        elif('syn_4_8' in self.prob_type):
+            self.n=4
+            self.m=8           
 
         self.eps = 1.0
+        self.best_cost = 1000
 
     def hard_update(self, target, source):
         for target_param, param in zip(target.parameters(), source.parameters()):
@@ -208,13 +212,12 @@ class transformer():
 
         return last_cost, cost_taken_list, self.ordering
 
-    def take_action(self,x, best_ordering, last_node, context, mask_blocked, mask_adj, epoch):
+    def take_action(self,x, best_ordering, last_node, context, mask_blocked, mask_adj, epoch, is_infer):
         bs, gs, in_d = x.size()
 
         rand_num = np.random.uniform(0,1)
 
-        if(rand_num > self.eps):  # epsilon greedy policy
-
+        if((rand_num > self.eps) or (is_infer)):  # epsilon greedy policy
             #  Take greedy action
             is_random = False
             q_max, attn_max, log_attn_mask, concat, mask_updated, max_indx = self.attn_model(x, best_ordering, last_node, context, mask_blocked, mask_adj, is_random, [])
@@ -255,12 +258,14 @@ class transformer():
             last_node_bl = torch.zeros(1, 1, self.embedding_dim)
 
             cost_taken_list = []
+            cost_tracker = []
 
             while(step < gs//2):
 
                 inp = x[i,:,:].view(1, gs, in_d)
 
-                q_max, attn_max, log_attn_max, concat, mask_updated, max_indx = self.take_action(inp, best_ordering, last_node, context, mask_blocked, mask_adj, epoch)
+                is_infer = False
+                q_max, attn_max, log_attn_max, concat, mask_updated, max_indx = self.take_action(inp, best_ordering, last_node, context, mask_blocked, mask_adj, epoch, is_infer)
                 #q_max_bl, attn_max_bl, log_attn_max_bl, concat_bl, mask_updated_bl, max_indx_bl = self.take_action(inp, last_node_bl, context_bl, mask_blocked_bl, mask_adj)
 
                 mask_blocked = mask_updated
@@ -280,9 +285,14 @@ class transformer():
                 cost_list.append(torch.Tensor([[cost - best_cost_taken[step]]]))
                 prob_list.append(log_attn_max.view(1, -1))
                 cost_taken_list.append(cost)
+                cost_tracker.append(torch.Tensor([[cost - best_cost_taken[step]]]))
 
                 step+=1
             last_cost = cost
+            self.best_cost = self.best_cost if (last_cost > best_cost_taken[(gs//2)-1]) else torch.cat(cost_tracker).view(1*(gs//2), 1)
+            self.routed_list = self.routed_list if (last_cost > best_cost_taken[(gs//2)-1]) else routed_list
+
+        prob_lst_best = self.simulate_best(self.best_cost, self.routed_list, inp, best_ordering, mask_adj)
 
         print("#"*80)
 
@@ -291,7 +301,78 @@ class transformer():
         costs = torch.cat(cost_list).view(bs*(gs//2), 1)
         probs = torch.cat(prob_list).view(bs*(gs//2), 1)
 
+        #costs = torch.cat((costs, self.best_cost), 0)
+        #probs = torch.cat((probs, prob_lst_best), 0)  
+
         return costs, probs, last_cost, cost_taken_list, curr_ordering
+
+    def simulate_best(self, best_cost, routed_list, inp, best_ordering, mask_adj):
+
+        bs, gs, in_d = inp.size()
+        inp = inp[0,:,:].view(1, gs, in_d)
+
+        is_random = True
+        mask_blocked = torch.ones(1, gs)
+        context = torch.zeros(1, 1, self.embedding_dim)
+        last_node = torch.zeros(1, 1, self.embedding_dim)
+        
+        log_prob_lst = []
+
+        for net in routed_list:
+            best_net = torch.tensor([[net]])
+            q_max, attn_max, log_attn_mask, concat, mask_updated, max_indx = self.attn_model(inp, best_ordering, last_node, context, mask_blocked, mask_adj, is_random, best_net)
+            
+            mask_updated = torch.Tensor.clone(mask_blocked) 
+            mask_updated[range(1), net] = 0.0
+
+            source_sink_mask_indx = (net + gs//2) if net < gs//2 else net-gs//2
+            mask_updated[range(1), source_sink_mask_indx] = 0.0  # also mask the complementary node
+            
+            mask_blocked = mask_updated
+            last_node = q_max
+            context = concat
+
+            log_prob_lst.append(log_attn_mask.view(1, -1))
+        prob_lst_best = torch.cat(log_prob_lst).view(bs*(gs//2), 1)
+
+        return prob_lst_best
+
+    def infer_rollout(self, x, mask_adj, ordering, epoch):
+
+        bs, gs, in_d = x.size()
+
+        mask_blocked = torch.ones(1, gs)
+        context = torch.zeros(1, 1, self.embedding_dim)
+        last_node = torch.zeros(1, 1, self.embedding_dim)
+
+        step = 0
+        routed_list = []
+
+        router_int = router(self.n, self.m, self.prob_type)
+
+        while(step < gs//2):
+
+            inp = x[0,:,:].view(1, gs, in_d)
+
+            is_infer = True
+            q_max, attn_max, log_attn_max, concat, mask_updated, max_indx = self.take_action(inp, ordering, last_node, context, mask_blocked, mask_adj, epoch, is_infer)
+            #q_max_bl, attn_max_bl, log_attn_max_bl, concat_bl, mask_updated_bl, max_indx_bl = self.take_action(inp, last_node_bl, context_bl, mask_blocked_bl, mask_adj)
+
+            mask_blocked = mask_updated
+            last_node = q_max
+            context = concat
+
+            indx_to_route = max_indx.item()
+            indx_to_route = (indx_to_route-gs//2) if (indx_to_route>=gs//2) else indx_to_route
+
+            routed_list.append(indx_to_route)
+            cost = router_int.calc_cost(i=indx_to_route, routed_lst = routed_list)  # placeholder to obtain the cost
+
+            cost = 1000 if cost is None else cost
+
+            step+=1
+        return cost         
+
 
     def save_model(self, prob_name):
         results_dir = "saved_models"

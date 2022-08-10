@@ -336,5 +336,13 @@ if __name__ == "__main__":
         ("C", (2, 9), (0, 11)),
         ], num_trials=args.num_trials, alg=args.alg, check=args.check)
 
+    elif args.model == "synthetic_4x8":
+        main(4, 12, [
+        ("a", (1, 0), (3, 2)),
+        ("A", (2, 1), (0, 3)),
+        ("b", (1, 4), (3, 6)),
+        ("B", (2, 5), (0, 7)),
+        ], num_trials=args.num_trials, alg=args.alg, check=args.check)
+
     else:
         assert False, f"Unknown model: {args.model}"

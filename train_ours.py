@@ -14,9 +14,9 @@ problem = 'route'
 embedding_dim = 128
 hidden_dim = 256
 n_heads = 1
-n_layers = 4
+n_layers = 3
 normalization = 'batch'
-device = torch.device("cpu" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
 
 num_epochs = 2000
 prob_name='syn_4_12'
@@ -66,7 +66,11 @@ for epoch in range(num_epochs):
         ordering = torch.tensor([c]).view(1, -1)
         best_cost_taken_list = cost_taken_list
 
-    cost_array.append(cost_)
+    y, mask_adj = graph_inst._getgraph(type_fn = prob_name)
+    y = y.repeat(1,1,1)
+    infer_cost = TF.infer_rollout(y, mask_adj, ordering, epoch)
+
+    cost_array.append(infer_cost)
 
 cost_dict = Counter(cost_array)
 cost_dict = dict(cost_dict)

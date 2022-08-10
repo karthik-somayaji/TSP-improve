@@ -314,6 +314,19 @@ class router():
         ("5", (2, 9), (0, 11)),
         ]
 
+        coords_syn_4_8 = {
+        "0":[(1, 0), (3, 2)],
+        "1":[(2, 1), (0, 3)],
+        "2":[(1, 4), (3, 6)],
+        "3":[(2, 5), (0, 7)]}
+
+        lst_syn_4_8 = [
+        ("0", (1, 0), (3, 2)),
+        ("1", (2, 1), (0, 3)),
+        ("2", (1, 4), (3, 6)),
+        ("3", (2, 5), (0, 7)),
+        ]
+
         if('syn_4_20' in type_fn):
             self.coords = coords_syn_4_20
             self.lst = lst_syn_4_20
@@ -323,6 +336,9 @@ class router():
         elif('syn_4_16' in type_fn):
             self.coords = coords_syn_4_16
             self.lst = lst_syn_4_16
+        elif('syn_4_8' in type_fn):
+            self.coords = coords_syn_4_8
+            self.lst = lst_syn_4_8
         elif('Lee' in type_fn):
             self.coords = coords
             self.lst = lst

@@ -1,7 +1,7 @@
 from turtle import st
 import torch
-from torch_geometric.data import Data
-import torch_geometric
+#from torch_geometric.data import Data
+#import torch_geometric
 from scipy.spatial import distance
 import numpy as np
 import networkx as nx
@@ -27,6 +27,9 @@ class graph_structure():
         start_positions_syn_4_12 = [[1, 0], [2, 1], [1, 4], [2, 5], [1, 8], [2, 9] ]
         end_positions_syn_4_12 =  [[3, 2], [0, 3], [3, 6], [0, 7], [3, 10], [0, 11]]
 
+        start_positions_syn_4_8 = [[1, 0], [2, 1], [1, 4], [2, 5]]
+        end_positions_syn_4_8 =  [[3, 2], [0, 3], [3, 6], [0, 7]]
+
         if('Lee' in type_fn):
             start_positions = start_positions_lee
             end_positions = end_positions_lee
@@ -39,6 +42,9 @@ class graph_structure():
         elif('syn_4_20' in type_fn):
             start_positions = start_positions_syn_4_20
             end_positions = end_positions_syn_4_20
+        elif('syn_4_8' in type_fn):
+            start_positions = start_positions_syn_4_8
+            end_positions = end_positions_syn_4_8
 
         concat_list = start_positions + end_positions
         n = len(start_positions)
@@ -56,12 +62,13 @@ class graph_structure():
         # connected nodes to the node
         for i in range(len(concat_list)):
             for j in range(len(concat_list)):
-                if(distance.euclidean([concat_list[i][0], concat_list[i][1]], [concat_list[j][0], concat_list[j][1]] ) < threshold_distance):
+                if(distance.euclidean([concat_list[i][0], concat_list[i][1]], [concat_list[j][0], concat_list[j][1]] ) <= threshold_distance):
                     adj_list.append([i,j])
                     adj_list_matrix[i,j] = 1.0
                 if(([i,j] not in adj_list) and abs(i-j)==n):
                     adj_list.append([i,j])
                     adj_list_matrix[i,j] = 1.0
+                #adj_list_matrix[i,j] = 1.0
 
         # define feature vector for each node
         for i in range(len(concat_list)):
@@ -71,18 +78,20 @@ class graph_structure():
                 net_num = np.zeros(len(start_positions))
                 net_num[i] = 1.0
                 net_num = net_num.tolist()  
-                feature = [start_positions[i][0], start_positions[i][1], MD_y, MD_x ] + net_num
+                #feature = [start_positions[i][0], start_positions[i][1], MD_y, MD_x ] + net_num
+                feature = [start_positions[i][0], start_positions[i][1], end_positions[i][0], end_positions[i][1] ] + net_num
             else:
                 MD_y, MD_x = np.abs(start_positions[i-n][0] - end_positions[i-n][0]), np.abs(start_positions[i-n][1] - end_positions[i-n][1])
                 net_num = np.zeros(len(start_positions))
                 net_num[i-n] = 1.0
                 net_num = net_num.tolist()
-                feature = [end_positions[i-n][0], end_positions[i-n][1], MD_y, MD_x ] + net_num
+                #feature = [end_positions[i-n][0], end_positions[i-n][1], MD_y, MD_x ] + net_num
+                feature = [end_positions[i-n][0], end_positions[i-n][1], start_positions[i-n][0], start_positions[i-n][1] ] + net_num
             feature_list.append(feature)
 
 
-        x = torch.tensor(feature_list)#, dtype = torch.long)
-        mask_adj = torch.tensor(adj_list)
+        x = torch.tensor(feature_list, dtype = torch.float)#, dtype = torch.long)
+        mask_adj = torch.tensor(adj_list, dtype = torch.long)
 
         return x, adj_list_matrix
 
