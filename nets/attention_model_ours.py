@@ -232,8 +232,8 @@ class transformer():
         mask_updated[range(bs), max_indx.squeeze()] = 0.0
 
         indx = max_indx.squeeze()
-        source_sink_mask_indx = (indx + gs//2) if indx < gs//2 else indx-gs//2
-        mask_updated[range(bs), source_sink_mask_indx] = 0.0  # also mask the complementary node
+        #source_sink_mask_indx = (indx + gs//2) if indx < gs//2 else indx-gs//2
+        #mask_updated[range(bs), source_sink_mask_indx] = 0.0  # also mask the complementary node
 
         return q_max, attn_max, log_attn_mask, concat, mask_updated, max_indx
 
@@ -260,7 +260,7 @@ class transformer():
             cost_taken_list = []
             cost_tracker = []
 
-            while(step < gs//2):
+            while(step < gs):
 
                 inp = x[i,:,:].view(1, gs, in_d)
 
@@ -273,7 +273,7 @@ class transformer():
                 context = concat
 
                 indx_to_route = max_indx.item()
-                indx_to_route = (indx_to_route-gs//2) if (indx_to_route>=gs//2) else indx_to_route
+                #indx_to_route = (indx_to_route-gs//2) if (indx_to_route>=gs//2) else indx_to_route
 
                 routed_list.append(indx_to_route)
                 cost = router_int.calc_cost(i=indx_to_route, routed_lst = routed_list)  # placeholder to obtain the cost
@@ -289,8 +289,8 @@ class transformer():
 
                 step+=1
             last_cost = cost
-            self.best_cost = self.best_cost if (last_cost > best_cost_taken[(gs//2)-1]) else torch.cat(cost_tracker).view(1*(gs//2), 1)
-            self.routed_list = self.routed_list if (last_cost > best_cost_taken[(gs//2)-1]) else routed_list
+            self.best_cost = self.best_cost if (last_cost > best_cost_taken[(gs//1)-1]) else torch.cat(cost_tracker).view(1*(gs//1), 1)
+            self.routed_list = self.routed_list if (last_cost > best_cost_taken[(gs//1)-1]) else routed_list
 
         prob_lst_best = self.simulate_best(self.best_cost, self.routed_list, inp, best_ordering, mask_adj)
 
@@ -298,8 +298,8 @@ class transformer():
 
         curr_ordering = torch.tensor([routed_list])
 
-        costs = torch.cat(cost_list).view(bs*(gs//2), 1)
-        probs = torch.cat(prob_list).view(bs*(gs//2), 1)
+        costs = torch.cat(cost_list).view(bs*(gs//1), 1)
+        probs = torch.cat(prob_list).view(bs*(gs//1), 1)
 
         #costs = torch.cat((costs, self.best_cost), 0)
         #probs = torch.cat((probs, prob_lst_best), 0)  
@@ -325,15 +325,15 @@ class transformer():
             mask_updated = torch.Tensor.clone(mask_blocked) 
             mask_updated[range(1), net] = 0.0
 
-            source_sink_mask_indx = (net + gs//2) if net < gs//2 else net-gs//2
-            mask_updated[range(1), source_sink_mask_indx] = 0.0  # also mask the complementary node
+            #source_sink_mask_indx = (net + gs//1) if net < gs//1 else net-gs//1
+            #mask_updated[range(1), source_sink_mask_indx] = 0.0  # also mask the complementary node
             
             mask_blocked = mask_updated
             last_node = q_max
             context = concat
 
             log_prob_lst.append(log_attn_mask.view(1, -1))
-        prob_lst_best = torch.cat(log_prob_lst).view(bs*(gs//2), 1)
+        prob_lst_best = torch.cat(log_prob_lst).view(bs*(gs//1), 1)
 
         return prob_lst_best
 
@@ -350,7 +350,7 @@ class transformer():
 
         router_int = router(self.n, self.m, self.prob_type)
 
-        while(step < gs//2):
+        while(step < gs//1):
 
             inp = x[0,:,:].view(1, gs, in_d)
 
@@ -363,7 +363,7 @@ class transformer():
             context = concat
 
             indx_to_route = max_indx.item()
-            indx_to_route = (indx_to_route-gs//2) if (indx_to_route>=gs//2) else indx_to_route
+            #indx_to_route = (indx_to_route-gs//2) if (indx_to_route>=gs//2) else indx_to_route
 
             routed_list.append(indx_to_route)
             cost = router_int.calc_cost(i=indx_to_route, routed_lst = routed_list)  # placeholder to obtain the cost

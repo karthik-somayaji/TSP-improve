@@ -53,17 +53,14 @@ for epoch in range(num_epochs):
 
     curr_ordering_list = curr_ordering[0,:].tolist()
     x_lst = curr_ordering_list.copy()
-    y_lst = [i+(gs//2) for i in x_lst]
+    #y_lst = [i+(gs//2) for i in x_lst]
     
     if(cost_ <= best_cost):
         print('Saving model')
         TF.save_model(prob_name= prob_name)
         best_cost = cost_
 
-        c = []
-        for a,b in zip(x_lst, y_lst):
-            c += [a,b]
-        ordering = torch.tensor([c]).view(1, -1)
+        ordering = torch.tensor([x_lst]).view(1, -1)
         best_cost_taken_list = cost_taken_list
 
     y, mask_adj = graph_inst._getgraph(type_fn = prob_name)

@@ -57,21 +57,20 @@ class graph_structure():
         threshold_distance = 1.0
         adj_list = []
         feature_list = []
-        adj_list_matrix = torch.zeros(2*n, 2*n)
+        adj_list_matrix = torch.zeros(n, n)
 
         # connected nodes to the node
-        for i in range(len(concat_list)):
-            for j in range(len(concat_list)):
-                if(distance.euclidean([concat_list[i][0], concat_list[i][1]], [concat_list[j][0], concat_list[j][1]] ) <= threshold_distance):
-                    adj_list.append([i,j])
-                    adj_list_matrix[i,j] = 1.0
-                if(([i,j] not in adj_list) and abs(i-j)==n):
+        for i in range(len(start_positions)):
+            for j in range(len(start_positions)):
+                is_neighbor_1 = distance.euclidean([start_positions[i][0], start_positions[i][1]], [start_positions[j][0], start_positions[j][1]] ) <= threshold_distance
+                is_neighbor_2 = distance.euclidean([end_positions[i][0], end_positions[i][1]], [end_positions[j][0], end_positions[j][1]] ) <= threshold_distance
+                if(is_neighbor_1 or is_neighbor_2):
                     adj_list.append([i,j])
                     adj_list_matrix[i,j] = 1.0
                 #adj_list_matrix[i,j] = 1.0
 
         # define feature vector for each node
-        for i in range(len(concat_list)):
+        for i in range(len(start_positions)):
             
             if(i < len(start_positions)):   
                 MD_y, MD_x = np.abs(start_positions[i][0] - end_positions[i][0]), np.abs(start_positions[i][1] - end_positions[i][1])
@@ -80,13 +79,6 @@ class graph_structure():
                 net_num = net_num.tolist()  
                 #feature = [start_positions[i][0], start_positions[i][1], MD_y, MD_x ] + net_num
                 feature = [start_positions[i][0], start_positions[i][1], end_positions[i][0], end_positions[i][1] ] + net_num
-            else:
-                MD_y, MD_x = np.abs(start_positions[i-n][0] - end_positions[i-n][0]), np.abs(start_positions[i-n][1] - end_positions[i-n][1])
-                net_num = np.zeros(len(start_positions))
-                net_num[i-n] = 1.0
-                net_num = net_num.tolist()
-                #feature = [end_positions[i-n][0], end_positions[i-n][1], MD_y, MD_x ] + net_num
-                feature = [end_positions[i-n][0], end_positions[i-n][1], start_positions[i-n][0], start_positions[i-n][1] ] + net_num
             feature_list.append(feature)
 
 
