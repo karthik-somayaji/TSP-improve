@@ -1,6 +1,7 @@
 import os
 import time
 import random
+import numpy as np
 
 import torch
 from tqdm import tqdm
@@ -11,15 +12,15 @@ from nets.attention_model_ours import transformer
 from define_graph import graph_structure
 
 problem = 'route'
-embedding_dim = 128
+embedding_dim = 256
 hidden_dim = 256
 n_heads = 1
-n_layers = 3
+n_layers = 3#7
 normalization = 'batch'
 device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
 
-num_epochs = 2000
-prob_name='syn_4_12'
+num_epochs = 1500
+prob_name='Lee_29'
 graph_inst = graph_structure()
 
 x, mask_adj = graph_inst._getgraph(type_fn = prob_name)
@@ -39,7 +40,7 @@ TF = transformer(problem,
                  prob_name,
                  node_dim)
 
-best_cost = 1000
+best_cost = 1500
 cost_array = []
 
 best_cost_taken_list = [best_cost for i in range(x.size(1))]  # define baseline costs
@@ -68,6 +69,8 @@ for epoch in range(num_epochs):
     infer_cost = TF.infer_rollout(y, mask_adj, ordering, epoch)
 
     cost_array.append(infer_cost)
+
+np.savetxt('Lee_29.txt', cost_array)
 
 cost_dict = Counter(cost_array)
 cost_dict = dict(cost_dict)

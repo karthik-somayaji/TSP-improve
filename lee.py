@@ -1,6 +1,6 @@
 from collections import defaultdict, Counter
 import random
-#import render
+import render
 import argparse
 import re
 
@@ -43,7 +43,7 @@ class Lee:
         def v_edge_on( i, j):
             return v_edges[((i,j),(i+1,j))]
 
-        #render.show(self.n, self.m, h_edge_on, v_edge_on)
+        render.show(self.n, self.m, h_edge_on, v_edge_on)
 
 
     def path2str(self, path):

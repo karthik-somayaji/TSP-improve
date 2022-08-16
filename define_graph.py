@@ -18,6 +18,18 @@ class graph_structure():
         start_positions_lee = [[2, 0], [3, 0], [5, 0], [6, 1], [5, 4], [2, 3], [3, 4], [0, 5], [3, 5], [7, 5]]
         end_positions_lee =   [[0, 2], [2, 1], [7, 2], [5, 5], [1, 5], [4, 6], [2, 6], [2, 7], [6, 6], [6, 7]]
 
+        start_positions_syn_4_32 = [[1, 0], [2, 1], [1, 4], [2, 5], [1, 8], [2, 9], [1, 12], [2, 13], [1, 16], [2, 17], [1,20], [2,21], [1,24], [2,25], [1,28], [2,29]]
+        end_positions_syn_4_32 =  [[3, 2], [0, 3], [3, 6], [0, 7], [3, 10], [0, 11], [3, 14], [0, 15], [3, 18], [0, 19], [3,22], [0, 23], [3,26], [0, 27], [3,30], [0, 31]]
+
+
+        start_positions_syn_4_28 = [[1, 0], [2, 1], [1, 4], [2, 5], [1, 8], [2, 9], [1, 12], [2, 13], [1, 16], [2, 17], [1,20], [2,21], [1,24], [2,25]]
+        end_positions_syn_4_28 =  [[3, 2], [0, 3], [3, 6], [0, 7], [3, 10], [0, 11], [3, 14], [0, 15], [3, 18], [0, 19], [3,22], [0, 23], [3,26], [0, 27]]
+
+        
+        start_positions_syn_4_24 = [[1, 0], [2, 1], [1, 4], [2, 5], [1, 8], [2, 9], [1, 12], [2, 13], [1, 16], [2, 17], [1,20], [2,21]]
+        end_positions_syn_4_24 =  [[3, 2], [0, 3], [3, 6], [0, 7], [3, 10], [0, 11], [3, 14], [0, 15], [3, 18], [0, 19], [3,22], [0, 23]]
+
+        
         start_positions_syn_4_20 = [[1, 0], [2, 1], [1, 4], [2, 5], [1, 8], [2, 9], [1, 12], [2, 13], [1, 16], [2, 17]]
         end_positions_syn_4_20 =  [[3, 2], [0, 3], [3, 6], [0, 7], [3, 10], [0, 11], [3, 14], [0, 15], [3, 18], [0, 19]]
 
@@ -31,8 +43,16 @@ class graph_structure():
         end_positions_syn_4_8 =  [[3, 2], [0, 3], [3, 6], [0, 7]]
 
         if('Lee' in type_fn):
+            m = int(type_fn[4:])
             start_positions = start_positions_lee
             end_positions = end_positions_lee
+            mult = (m+7)//8
+
+            s = [(x*mult,y*mult) for (x,y) in start_positions]
+            e = [(x*mult,y*mult) for (x,y) in end_positions]
+            start_positions = s.copy()
+            end_positions = e.copy()
+
         elif('syn_4_12' in type_fn):
             start_positions = start_positions_syn_4_12
             end_positions = end_positions_syn_4_12
@@ -45,6 +65,16 @@ class graph_structure():
         elif('syn_4_8' in type_fn):
             start_positions = start_positions_syn_4_8
             end_positions = end_positions_syn_4_8
+        elif('syn_4_24' in type_fn):
+            start_positions = start_positions_syn_4_24
+            end_positions = end_positions_syn_4_24
+        elif('syn_4_28' in type_fn):
+            start_positions = start_positions_syn_4_28
+            end_positions = end_positions_syn_4_28
+        elif('syn_4_32' in type_fn):
+            start_positions = start_positions_syn_4_32
+            end_positions = end_positions_syn_4_32
+
 
         concat_list = start_positions + end_positions
         n = len(start_positions)
@@ -54,7 +84,7 @@ class graph_structure():
 
         pos = {x:concat_list[x] for x in range(2*n)}
 
-        threshold_distance = 1.0
+        threshold_distance = 5.0 #5.0
         adj_list = []
         feature_list = []
         adj_list_matrix = torch.zeros(n, n)
@@ -69,6 +99,8 @@ class graph_structure():
                     adj_list_matrix[i,j] = 1.0
                 #adj_list_matrix[i,j] = 1.0
 
+        print(adj_list_matrix)
+
         # define feature vector for each node
         for i in range(len(start_positions)):
             
@@ -78,7 +110,8 @@ class graph_structure():
                 net_num[i] = 1.0
                 net_num = net_num.tolist()  
                 #feature = [start_positions[i][0], start_positions[i][1], MD_y, MD_x ] + net_num
-                feature = [start_positions[i][0], start_positions[i][1], end_positions[i][0], end_positions[i][1] ] + net_num
+                #feature = [start_positions[i][0], start_positions[i][1], end_positions[i][0], end_positions[i][1] ] + net_num
+                feature = [start_positions[i][0], start_positions[i][1]] + net_num
             feature_list.append(feature)
 
 

@@ -150,14 +150,10 @@ class transformer():
         self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim)
         self.hard_update(self.attn_model_baseline, self.attn_model)  # make the baseline equal to the current model
 
-        self.optimizer = Adam(self.attn_model.parameters(), lr=5e-4)
+        self.optimizer = Adam(self.attn_model.parameters(), lr=1e-4)
 
-        if('Lee_8' in self.prob_type):
-            self.m = self.n = 8
-        elif('Lee_16' in self.prob_type):
-            self.m = self.n = 16
-        elif('Lee_24' in self.prob_type):
-            self.m = self.n = 24
+        if('Lee' in self.prob_type):
+            self.m = self.n = int(self.prob_type[4:])
         elif('syn_4_20' in self.prob_type):
             self.n=4
             self.m=20
@@ -169,7 +165,16 @@ class transformer():
             self.m=12
         elif('syn_4_8' in self.prob_type):
             self.n=4
-            self.m=8           
+            self.m=8  
+        elif('syn_4_24' in self.prob_type):
+            self.n=4
+            self.m=24   
+        elif('syn_4_28' in self.prob_type):
+            self.n=4
+            self.m=28 
+        elif('syn_4_32' in self.prob_type):
+            self.n=4
+            self.m=32      
 
         self.eps = 1.0
         self.best_cost = 1000
@@ -203,7 +208,7 @@ class transformer():
 
         # compute gradients
         self.optimizer.zero_grad()
-        loss = torch.multiply(costs, log_probs)
+        loss = torch.multiply(costs, -log_probs)
         loss = loss.mean().mean()
         loss.backward()
         self.optimizer.step()
@@ -259,6 +264,7 @@ class transformer():
 
             cost_taken_list = []
             cost_tracker = []
+            prev_cost = 0
 
             while(step < gs):
 
@@ -278,16 +284,20 @@ class transformer():
                 routed_list.append(indx_to_route)
                 cost = router_int.calc_cost(i=indx_to_route, routed_lst = routed_list)  # placeholder to obtain the cost
 
-                cost = 1000 if cost is None else cost
+                cost = (1000) if cost is None else cost
 
                 print('Epoch:', epoch, 'Step:', step, 'Cost:', cost, 'Routed:', indx_to_route)
 
-                cost_list.append(torch.Tensor([[cost - best_cost_taken[step]]]))
+                #cost_list.append(torch.Tensor([[cost - best_cost_taken[step]]]))
+                cost_list.append(torch.Tensor([[cost ]]))
                 prob_list.append(log_attn_max.view(1, -1))
                 cost_taken_list.append(cost)
-                cost_tracker.append(torch.Tensor([[cost - best_cost_taken[step]]]))
+                #cost_tracker.append(torch.Tensor([[cost - best_cost_taken[step]]]))
+                cost_tracker.append(torch.Tensor([[cost]]))
+                #prev_cost = cost
 
                 step+=1
+
             last_cost = cost
             self.best_cost = self.best_cost if (last_cost > best_cost_taken[(gs//1)-1]) else torch.cat(cost_tracker).view(1*(gs//1), 1)
             self.routed_list = self.routed_list if (last_cost > best_cost_taken[(gs//1)-1]) else routed_list
@@ -301,8 +311,8 @@ class transformer():
         costs = torch.cat(cost_list).view(bs*(gs//1), 1)
         probs = torch.cat(prob_list).view(bs*(gs//1), 1)
 
-        #costs = torch.cat((costs, self.best_cost), 0)
-        #probs = torch.cat((probs, prob_lst_best), 0)  
+        costs = torch.cat((costs, self.best_cost), 0)
+        probs = torch.cat((probs, prob_lst_best), 0)  
 
         return costs, probs, last_cost, cost_taken_list, curr_ordering
 
