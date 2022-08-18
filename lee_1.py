@@ -342,6 +342,8 @@ if __name__ == "__main__":
 
     m = p.match(args.model)
 
+    print(m)
+
     if m:
         subs = m.groups()
         n_i = int(subs[1])
@@ -366,6 +368,11 @@ if __name__ == "__main__":
         ("5", (7, 5), (5, 7)),
         ("6", (7, 6), (6, 7)),
         ], num_trials=args.num_trials, alg=args.alg, check=args.check, order=args.order)
+
+    elif ('synthetic' in args.model):
+        num = int(args.model[12:])//2
+        lst = [(str(i), ((i%2 + 1), (i*2-1 if i%2 else i*2)), ((0 if (i%2) else 3), (i*2-1 if i%2 else i*2)+2 ) ) for i in range(num)]
+        main(4, 20, lst, num_trials=args.num_trials, alg=args.alg, check=args.check, order=args.order)
 
     elif args.model == "synthetic_4x20":
         main(4, 20, [
@@ -402,6 +409,60 @@ if __name__ == "__main__":
         ("c", (1, 8), (3, 10)),
         ("C", (2, 9), (0, 11)),
         ], num_trials=args.num_trials, alg=args.alg, check=args.check, order=args.order)
+
+    elif args.model == "synthetic_4x36":
+            main(4, 36, [
+            ("a", (1, 0), (3, 2)),
+            ("A", (2, 1), (0, 3)),
+            ("b", (1, 4), (3, 6)),
+            ("B", (2, 5), (0, 7)),
+            ("c", (1, 8), (3, 10)),
+            ("C", (2, 9), (0, 11)),
+            ("d", (1, 12), (3, 14)),
+            ("D", (2, 13), (0, 15)),
+            ("e", (1, 16), (3, 18)),
+            ("E", (2, 17), (0, 19)),
+
+            ("f", (1, 20), (3, 22)),
+            ("F", (2, 21), (0, 23)),
+            ("g", (1, 24), (3, 26)),
+            ("G", (2, 25), (0, 27)),
+            ("h", (1, 28), (3, 30)),
+            ("H", (2, 29), (0, 31)),
+            ("i", (1, 32), (3, 34)),
+            ("I", (2, 33), (0, 35)),
+            
+            ], num_trials=args.num_trials, alg=args.alg, check=args.check)
+
+    elif args.model == "custom_8x8_4x20":
+        main(8, 28, [
+        ("f", (1, 0), (3, 2)),
+        ("F", (2, 1), (0, 3)),
+        ("g", (1, 4), (3, 6)),
+        ("G", (2, 5), (0, 7)),
+        ("h", (1, 8), (3, 10)),
+        ("H", (2, 9), (0, 11)),
+        ("a", (4, 0), (6, 2)),
+        ("A", (5, 1), (3, 3)),
+        ("b", (4, 4), (6, 6)),
+        ("B", (5, 5), (3, 7)),
+        ("c", (4, 8), (6, 10)),
+        ("C", (5, 9), (3, 11)),
+        ("d", (4, 12), (6, 14)),
+        ("D", (5, 13), (3, 15)),
+        ("e", (4, 16), (6, 18)),
+        ("E", (5, 17), (3, 19)),
+        ('1', (2, 20), (0, 22)),
+        ('2', (3, 20), (2, 21)), 
+        ('3', (5, 20), (7, 22)), 
+        ('4', (6, 21), (5, 25)),
+        ('5', (5, 24), (1, 25)),
+        ('6', (2, 23), (4, 26)),
+        ('7', (3, 24), (2, 26)), 
+        ('8', (0, 25), (2, 27)),
+        ('9', (3, 25), (6, 26)),
+        ('x', (7, 25), (6, 27)),  
+    ], num_trials=args.num_trials, alg=args.alg, check=args.check, order=args.order)
 
     else:
         assert False, f"Unknown model: {args.model}"

@@ -134,7 +134,9 @@ class transformer():
                  device,
                  mask,
                  prob_type,
-                 node_dim):
+                 node_dim,
+                 batch_sz,
+                 graph_sz):
         self.problem = problem
         self.embedding_dim = embedding_dim
         self.hidden_dim = hidden_dim
@@ -145,39 +147,30 @@ class transformer():
         self.mask = mask
         self.prob_type = prob_type
         self.node_dim = node_dim
+        self.batch_sz =  batch_sz
+        self.graph_sz = graph_sz
 
         self.attn_model = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim)
         self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim)
         self.hard_update(self.attn_model_baseline, self.attn_model)  # make the baseline equal to the current model
 
-        self.optimizer = Adam(self.attn_model.parameters(), lr=1e-4)
+        self.optimizer = Adam(self.attn_model.parameters(), lr=1e-5)
 
         if('Lee' in self.prob_type):
             self.m = self.n = int(self.prob_type[4:])
-        elif('syn_4_20' in self.prob_type):
-            self.n=4
-            self.m=20
-        elif('syn_4_16' in self.prob_type):
-            self.n=4
-            self.m=16
-        elif('syn_4_12' in self.prob_type):
-            self.n=4
-            self.m=12
-        elif('syn_4_8' in self.prob_type):
-            self.n=4
-            self.m=8  
-        elif('syn_4_24' in self.prob_type):
-            self.n=4
-            self.m=24   
-        elif('syn_4_28' in self.prob_type):
-            self.n=4
-            self.m=28 
-        elif('syn_4_32' in self.prob_type):
-            self.n=4
-            self.m=32      
+
+        elif('syn' in self.prob_type):
+            self.n = 4
+            self.m = int(self.prob_type[6:])
+ 
+        elif('custom_8_4_20' in self.prob_type):
+            self.n=8
+            self.m=28  
 
         self.eps = 1.0
         self.best_cost = 1000
+
+        self.baseline = 1500*torch.ones(self.batch_sz*self.graph_sz,1)
 
     def hard_update(self, target, source):
         for target_param, param in zip(target.parameters(), source.parameters()):
@@ -200,7 +193,7 @@ class transformer():
         """ 
 
         self.ordering = ordering
-        self.eps = max(0.1,  self.eps-0.001)
+        self.eps = max(0.1,  self.eps-0.005)
         costs, log_probs, last_cost, cost_taken_list, curr_ordering = self.rollout(x, self.ordering, mask_adj, epoch, best_cost_taken)
         self.ordering = curr_ordering.view(1, -1)
 
@@ -311,8 +304,22 @@ class transformer():
         costs = torch.cat(cost_list).view(bs*(gs//1), 1)
         probs = torch.cat(prob_list).view(bs*(gs//1), 1)
 
-        costs = torch.cat((costs, self.best_cost), 0)
-        probs = torch.cat((probs, prob_lst_best), 0)  
+        #costs = torch.cat((costs, self.best_cost), 0)
+        #probs = torch.cat((probs, prob_lst_best), 0)
+
+        if((best_cost_taken[(gs//1)-1] < 1000) ):
+            if((self.baseline.shape[0]==self.batch_sz*gs)):
+                self.baseline = torch.cat((self.baseline, self.baseline[0:gs,:].reshape(-1,1)), 0)
+            costs = torch.cat((costs, self.best_cost), 0)
+            probs = torch.cat((probs, prob_lst_best), 0)
+
+        #self.baseline = (0.8*self.baseline) + (0.2*costs)
+
+        print(torch.cat((self.best_cost, prob_lst_best), 1))  
+
+
+        #costs = (costs-self.best_cost.mean().mean())/self.best_cost.std()
+        #costs = (costs-self.baseline)
 
         return costs, probs, last_cost, cost_taken_list, curr_ordering
 

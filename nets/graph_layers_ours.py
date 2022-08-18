@@ -325,5 +325,5 @@ class EmbeddingNet(nn.Module):
         self.embedder = nn.Linear(node_dim, embedding_dim)
         
     def forward(self, x, solutions):
-        pos_enc = position_encoding(solutions, self.embedding_dim, self.device)
-        return self.embedder(x) + pos_enc.cpu()
+        #pos_enc = position_encoding(solutions, self.embedding_dim, self.device)
+        return self.embedder(x) #+ pos_enc.cpu()

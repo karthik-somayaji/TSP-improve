@@ -1,13 +1,24 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import argparse
 
-inp = np.loadtxt('Lee_29.txt')
+parser = argparse.ArgumentParser(description="RL Comb-Opt")
+parser.add_argument("-p", "--prob", type=str, default="syn_4_36")
+args = parser.parse_args()
 
-inp[inp==1000] = 500
+prob_type = args.prob
+print(prob_type)
+
+txt_path = prob_type + '.txt'
+inp = np.loadtxt(txt_path)
+
+inp[inp>=1000] = 0
 
 plt.figure()
-plt.plot(inp, label='Lee_29')
+plt.plot(inp, label=prob_type)
 plt.xlabel('Epochs')
 plt.ylabel('Final Cost')
 plt.legend()
-plt.savefig('Figures/Lee_29.png')
+
+path = 'Figures/'+ prob_type+'.png'
+plt.savefig(path)
