@@ -183,7 +183,7 @@ class Lee:
 
             #print(nm, src, tgt, self.path2str(path_l) if path_l is not None else None)
 
-        return self.total_wire_length() if all_ok else 1000#+self.total_wire_length()#None
+        return self.total_wire_length() if all_ok else 1000+self.total_wire_length()#None
 
     def total_wire_length(self):
         s = 0
@@ -214,6 +214,7 @@ class router():
 
         #mult = 2 if ('Lee_16' in type_fn) else(3 if ('Lee_24' in type_fn) else 1)
         num_nets = len(self.lst)
+        self.num_nets = num_nets
 
         mult = (self.n + 7)//8 if('Lee' in type_fn) else 1
 
@@ -232,6 +233,7 @@ class router():
 
     def reset_state(self):
         self.a = Lee(self.n,self.m)
+        #return np.zeros((self.num_nets, self.num_nets))
 
     def scale(self, nets, scale=1):
         for net, src, tgt in nets:
