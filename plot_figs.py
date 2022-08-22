@@ -12,7 +12,7 @@ print(prob_type)
 txt_path = prob_type + '.txt'
 inp = np.loadtxt(txt_path)
 
-inp[inp>=1000] = 0
+#inp[inp>=1000] = 0
 
 plt.figure()
 plt.plot(inp, label=prob_type)

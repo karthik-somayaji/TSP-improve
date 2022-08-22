@@ -46,7 +46,27 @@ def calc_next_state(state, indx, total_steps, curr_time_step):
 
     return st.reshape(1,-1)
 
+def eval_model(n,m, prob, total_steps, agent):
+    router_inst = router(n, m, prob)
+    routed_lst = []
 
+    state = torch.Tensor(reset_state(total_steps).reshape(1, -1))
+
+    for step in range(total_steps):
+        action = agent.select_action(state, epoch, infer=True)
+        routed_lst.append(action[0,0].item())
+
+        done = 1.0 if (step==total_steps-1) else 0.0
+
+        next_state = calc_next_state(state, action[0,0].item(), total_steps, step)
+
+        cost = router_inst.calc_cost(i=action[0,0].item(), routed_lst = routed_lst)
+
+        state = torch.tensor(next_state)
+
+    return cost
+
+infer_cost = []
 for epoch in range(args.num_epochs):
     router_inst = router(n, m, args.prob)
     routed_lst = []
@@ -77,8 +97,13 @@ for epoch in range(args.num_epochs):
         state = torch.tensor(next_state)
 
         agent.train()
-    
+    infer_cost.append(eval_model(n,m, args.prob, total_steps, agent))
     print("#"*80)
+
+file_name = args.prob + '.txt'
+np.savetxt(file_name, infer_cost)
+    
+    
 
     
 

@@ -26,6 +26,9 @@ class Critic(nn.Module):
         self.linear3 = nn.Linear(hidden_size, hidden_size)
         self.ln3 = nn.LayerNorm(hidden_size)
 
+        self.linear4 = nn.Linear(hidden_size, hidden_size)
+        self.ln4 = nn.LayerNorm(hidden_size)
+
         self.V = nn.Linear(hidden_size, num_outputs)
         #self.V.weight.data.mul_(0.01)
         #self.V.bias.data.mul_(0.01)
@@ -42,6 +45,7 @@ class Critic(nn.Module):
         #x = F.relu(self.linear1(x))
         x = F.relu(self.ln2(self.linear2(x)))
         x = F.relu(self.ln3(self.linear3(x)))
+        x = F.relu(self.ln4(self.linear4(x)))
         V = self.V(x)
 
         #if(infer):
@@ -101,7 +105,7 @@ class DQN_agent():
         self.curr_episode = 0  # keep track of current episode
 
         # Setup Optimizer
-        critic_lr = 1e-4
+        critic_lr = 5e-4#5e-4
         self.critic_optimizer = Adam(self.critic_model.parameters(), lr=critic_lr)
 
     def select_action(self, state, episode, infer):
@@ -137,7 +141,8 @@ class DQN_agent():
         
         else:
             #action = max(legal_value_pairs)[1]
-            action = [x[1] for x in sorted(legal_value_pairs, reverse=True)]
+            action = max(legal_value_pairs)[1]
+            action = torch.tensor([[action]])
 
         # slowly anneal the epsilon per episode
         if(self.curr_episode != episode):
