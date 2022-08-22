@@ -14,7 +14,16 @@ for n in nets:
      #print(ind)
      convergence_pt.append(ind)
 
-print(convergence_pt)
+nets = np.array(nets)
+exp_nets = []
+for i in range(nets.shape[0]):
+     exp_nets.append(convergence_pt[0]) if i==0 else exp_nets.append(exp_nets[i-1]*2 )
 
-    
+plt.figure()
+plt.plot(nets//2, np.log(np.array(convergence_pt)), label='RL-Ours')
+plt.plot(nets//2, np.log(np.array(exp_nets)), label='Random')
+plt.xlabel('number of nets')
+plt.ylabel('Log Data required for convergence')
+plt.legend()
+plt.savefig('Figures/convergence_trend.png')
 
