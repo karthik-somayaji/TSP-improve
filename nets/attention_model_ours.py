@@ -154,7 +154,7 @@ class transformer():
         self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim)
         self.hard_update(self.attn_model_baseline, self.attn_model)  # make the baseline equal to the current model
 
-        self.optimizer = Adam(self.attn_model.parameters(), lr=1e-5)
+        self.optimizer = Adam(self.attn_model.parameters(), lr=5e-5)
 
         if('Lee' in self.prob_type):
             self.m = self.n = int(self.prob_type[4:])
@@ -197,8 +197,6 @@ class transformer():
         costs, log_probs, last_cost, cost_taken_list, curr_ordering = self.rollout(x, self.ordering, mask_adj, epoch, best_cost_taken)
         self.ordering = curr_ordering.view(1, -1)
 
-        #q_max, attn_max, log_attn_mask, concat, mask_updated, max_indx = self.attn_model(x, last_node, context, mask_blocked, mask_adj)
-
         # compute gradients
         self.optimizer.zero_grad()
         loss = torch.multiply(costs, -log_probs)
@@ -230,8 +228,6 @@ class transformer():
         mask_updated[range(bs), max_indx.squeeze()] = 0.0
 
         indx = max_indx.squeeze()
-        #source_sink_mask_indx = (indx + gs//2) if indx < gs//2 else indx-gs//2
-        #mask_updated[range(bs), source_sink_mask_indx] = 0.0  # also mask the complementary node
 
         return q_max, attn_max, log_attn_mask, concat, mask_updated, max_indx
 
@@ -272,8 +268,7 @@ class transformer():
                 context = concat
 
                 indx_to_route = max_indx.item()
-                #indx_to_route = (indx_to_route-gs//2) if (indx_to_route>=gs//2) else indx_to_route
-
+                
                 routed_list.append(indx_to_route)
                 cost = router_int.calc_cost(i=indx_to_route, routed_lst = routed_list)  # placeholder to obtain the cost
 
@@ -303,9 +298,6 @@ class transformer():
 
         costs = torch.cat(cost_list).view(bs*(gs//1), 1)
         probs = torch.cat(prob_list).view(bs*(gs//1), 1)
-
-        #costs = torch.cat((costs, self.best_cost), 0)
-        #probs = torch.cat((probs, prob_lst_best), 0)
 
         if((best_cost_taken[(gs//1)-1] < 1000) ):
             if((self.baseline.shape[0]==self.batch_sz*gs)):
