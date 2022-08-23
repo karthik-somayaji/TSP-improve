@@ -30,7 +30,7 @@ hidden_dim = args.hidden_dim
 n_heads = 1
 n_layers = args.num_layers#7
 normalization = 'batch'
-device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 batch_sz = args.batch_sz
 
 num_epochs = args.num_epochs

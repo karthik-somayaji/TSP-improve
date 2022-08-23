@@ -5,6 +5,8 @@ import numpy as np
 import os
 from problems.problem_lee1 import router
 
+torch.set_default_tensor_type('torch.cuda.FloatTensor')
+
 from nets.graph_layers_ours import MultiHeadAttentionLayer, MultiHeadDecoder, EmbeddingNet
 
 class AttentionModel(nn.Module):
@@ -150,11 +152,12 @@ class transformer():
         self.batch_sz =  batch_sz
         self.graph_sz = graph_sz
 
-        self.attn_model = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim)
-        self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim)
+        self.attn_model = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim).to(self.device)
+        self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim).to(self.device)
         self.hard_update(self.attn_model_baseline, self.attn_model)  # make the baseline equal to the current model
 
-        self.optimizer = Adam(self.attn_model.parameters(), lr=1e-5)
+        self.optimizer = Adam(self.attn_model.parameters(), lr=1e-4)
+        self.optimizer.param_groups[0]['capturable'] = True
 
         if('Lee' in self.prob_type):
             self.m = self.n = int(self.prob_type[4:])
@@ -222,7 +225,7 @@ class transformer():
 
         else:
             is_random = True
-            net = torch.where(mask_blocked > 0.0)[1]
+            net = torch.where(mask_blocked > 0.0)[1].cpu()
             random_net = torch.tensor([[np.random.choice(net)]])
             q_max, attn_max, log_attn_mask, concat, mask_updated, max_indx = self.attn_model(x, best_ordering, last_node, context, mask_blocked, mask_adj, is_random, random_net)
         
