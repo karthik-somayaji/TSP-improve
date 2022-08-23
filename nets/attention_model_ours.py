@@ -278,11 +278,12 @@ class transformer():
                 cost = router_int.calc_cost(i=indx_to_route, routed_lst = routed_list)  # placeholder to obtain the cost
 
                 cost = (1000) if cost is None else cost
+                prev_cost = cost
 
                 print('Epoch:', epoch, 'Step:', step, 'Cost:', cost, 'Routed:', indx_to_route)
 
                 #cost_list.append(torch.Tensor([[cost - best_cost_taken[step]]]))
-                cost_list.append(torch.Tensor([[cost ]]))
+                cost_list.append(torch.Tensor([[cost + prev_cost ]]))
                 prob_list.append(log_attn_max.view(1, -1))
                 cost_taken_list.append(cost)
                 #cost_tracker.append(torch.Tensor([[cost - best_cost_taken[step]]]))

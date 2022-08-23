@@ -91,7 +91,7 @@ class DQN_agent():
         self.hard_update(self.target_critic, self.critic_model)
 
         # Used to update target networks
-        self.tau = 0.001
+        self.tau = 0.009
         self.gamma = 0.99
 
         # set epsilon level for performing noisy actions

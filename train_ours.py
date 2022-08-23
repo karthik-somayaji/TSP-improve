@@ -87,7 +87,7 @@ for epoch in range(num_epochs):
 
     cost_array.append(infer_cost)
 
-file_name = prob_name + '.txt'
+file_name = 'saved_files/' + prob_name + '.txt'
 np.savetxt(file_name, cost_array)
 
 cost_dict = Counter(cost_array)
