@@ -1,4 +1,4 @@
-import system
+from os import system
 import argparse
 
 parser = argparse.ArgumentParser(description="RL Comb-Opt")
@@ -17,5 +17,8 @@ elif(24<no_of_nets<=32):
     num_layer = 9
 
 for trial in range(5):
-    exec = "python train_ours.py --num_layers {} --prob {} -b 1 -t 1000 -a Q -tr {} ".format(num_layer, args.prob, trial )
-    system(exec)
+    exec_Q = "python train_ours.py --num_layers {} --prob {} -b 1 -t 1000 -a Q -tr {} ".format(num_layer, args.prob, trial )
+    system(exec_Q)
+
+    exec_inst = "python train_ours.py --num_layers {} --prob {} -b 1 -t 1000 -a inst -tr {} ".format(num_layer, args.prob, trial )
+    system(exec_inst)
