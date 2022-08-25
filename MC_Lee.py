@@ -289,7 +289,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Lee Router")
     parser.add_argument("-m", "--model", type=str, default="ten_nets_8x8")
-    parser.add_argument("-n", "--num_trials", type=int, default=1000)
+    parser.add_argument("-n", "--num_trials", type=int, default=2000)
     parser.add_argument("-a", "--alg", type=str, default='astar')
     parser.add_argument("-s", "--seed", type=int, default=0)
     parser.add_argument("-c", "--check", action='store_true')

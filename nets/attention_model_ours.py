@@ -156,7 +156,7 @@ class transformer():
         self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim).to(self.device)
         self.hard_update(self.attn_model_baseline, self.attn_model)  # make the baseline equal to the current model
 
-        self.optimizer = Adam(self.attn_model.parameters(), lr=1e-4)
+        self.optimizer = Adam(self.attn_model.parameters(), lr=5e-5)
         self.optimizer.param_groups[0]['capturable'] = True
 
         if('Lee' in self.prob_type):
@@ -290,7 +290,7 @@ class transformer():
                 prob_list.append(log_attn_max.view(1, -1))
                 cost_taken_list.append(cost)
                 #cost_tracker.append(torch.Tensor([[cost - best_cost_taken[step]]]))
-                cost_tracker.append(torch.Tensor([[cost]]))
+                cost_tracker.append(torch.Tensor([[cost + prev_cost]]))
                 #prev_cost = cost
 
                 step+=1
@@ -314,7 +314,8 @@ class transformer():
         if((best_cost_taken[(gs//1)-1] < 1000) ):
             if((self.baseline.shape[0]==self.batch_sz*gs)):
                 self.baseline = torch.cat((self.baseline, self.baseline[0:gs,:].reshape(-1,1)), 0)
-            costs = torch.cat((costs, self.best_cost), 0)
+            costs = torch.cat((costs, self.best_cost + torch.cumsum(self.best_cost, dim=0)), 0)
+            #costs = torch.cat((costs, self.best_cost ), 0)
             probs = torch.cat((probs, prob_lst_best), 0)
 
         #self.baseline = (0.8*self.baseline) + (0.2*costs)
