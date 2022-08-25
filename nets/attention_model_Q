@@ -126,7 +126,7 @@ class AttentionModel(nn.Module):
         return pair, selected_log_likelihood.squeeze()'''
 
 
-class transformer():
+class transformer_Q():
     def __init__(self, problem,
                  embedding_dim,
                  hidden_dim,
@@ -138,7 +138,8 @@ class transformer():
                  prob_type,
                  node_dim,
                  batch_sz,
-                 graph_sz):
+                 graph_sz,
+                 seed):
         self.problem = problem
         self.embedding_dim = embedding_dim
         self.hidden_dim = hidden_dim
@@ -151,6 +152,9 @@ class transformer():
         self.node_dim = node_dim
         self.batch_sz =  batch_sz
         self.graph_sz = graph_sz
+        self.seed = seed
+
+        torch.manual_seed(self.seed)
 
         self.attn_model = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim).to(self.device)
         self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim).to(self.device)
@@ -314,8 +318,8 @@ class transformer():
         if((best_cost_taken[(gs//1)-1] < 1000) ):
             if((self.baseline.shape[0]==self.batch_sz*gs)):
                 self.baseline = torch.cat((self.baseline, self.baseline[0:gs,:].reshape(-1,1)), 0)
-            costs = torch.cat((costs, self.best_cost + torch.cumsum(self.best_cost, dim=0)), 0)
-            #costs = torch.cat((costs, self.best_cost ), 0)
+            .#costs = torch.cat((costs, self.best_cost + torch.cumsum(self.best_cost, dim=0)), 0)
+            costs = torch.cat((costs, self.best_cost ), 0)
             probs = torch.cat((probs, prob_lst_best), 0)
 
         #self.baseline = (0.8*self.baseline) + (0.2*costs)
@@ -396,11 +400,11 @@ class transformer():
         return cost         
 
 
-    def save_model(self, prob_name):
+    def save_model(self, prob_name, trial):
         results_dir = "saved_models"
         if not os.path.exists(results_dir):
             os.makedirs(results_dir)
-        path = "{}/{}_transformer".format(results_dir, prob_name)
+        path = "{}/{}_transformer_Q_{}".format(results_dir, prob_name, trial)
         torch.save(self.attn_model.state_dict(), path)
 
     def load(self, prob_name):

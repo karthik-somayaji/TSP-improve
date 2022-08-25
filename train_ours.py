@@ -9,7 +9,8 @@ from torch.utils.data import DataLoader
 from collections import Counter, OrderedDict
 import argparse
 
-from nets.attention_model_ours import transformer
+from nets.attention_model_inst import transformer_inst
+from nets.attention_model_Q import transformer_Q
 from define_graph import graph_structure
 
 parser = argparse.ArgumentParser(description="RL Comb-Opt")
@@ -19,6 +20,8 @@ parser.add_argument("-e", "--embedding_dim", type=int, default=256)
 parser.add_argument("-hi", "--hidden_dim", type=int, default=256)
 parser.add_argument("-t", "--num_epochs", type=int, default=1500)
 parser.add_argument("-b", "--batch_sz", type=int, default=1)
+parser.add_argument("-a", "--algorithm", type=str, default='inst')
+parser.add_argument("-tr", "--trial", type=int, default=0)
 
 
 args = parser.parse_args()
@@ -44,18 +47,36 @@ bs, gs, ns = x.size()
 node_dim = ns
 graph_sz = gs
 
-TF = transformer(problem,
-                 embedding_dim,
-                 hidden_dim,
-                 n_heads,
-                 n_layers,
-                 normalization,
-                 device, 
-                 mask_adj,
-                 prob_name,
-                 node_dim,
-                 batch_sz,
-                 graph_sz)
+if(args.algorithm=='inst'):
+    TF = _transformer_inst(problem,
+                    embedding_dims,
+                    hidden_dim,
+                    n_heads,
+                    n_layers,
+                    normalization,
+                    device, 
+                    mask_adj,
+                    prob_name,
+                    node_dim,
+                    batch_sz,
+                    graph_sz,
+                    args.trial)
+
+elif(args.algorithm=='Q'):
+    TF = _transformer_Q(problem,
+                    embedding_dim,
+                    hidden_dim,
+                    n_heads,
+                    n_layers,
+                    normalization,
+                    device, 
+                    mask_adj,
+                    prob_name,
+                    node_dim,
+                    batch_sz,
+                    graph_sz,
+                    args.trial)
+
 
 best_cost = 1500
 cost_array = []
@@ -75,7 +96,7 @@ for epoch in range(num_epochs):
     
     if(cost_ <= best_cost):
         print('Saving model')
-        TF.save_model(prob_name= prob_name)
+        TF.save_model(prob_name= prob_name, trial=str(args.trial))
         best_cost = cost_
 
         ordering = torch.tensor([x_lst]).view(1, -1)
@@ -87,7 +108,7 @@ for epoch in range(num_epochs):
 
     cost_array.append(infer_cost)
 
-file_name = 'saved_files/' + prob_name + '_alg:1' + '.txt'
+file_name = 'saved_files/' + prob_name + '_alg:'  + args.algorithm + '_' + str(args.trial) + '.txt'
 np.savetxt(file_name, cost_array)
 
 cost_dict = Counter(cost_array)
