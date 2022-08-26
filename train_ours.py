@@ -48,8 +48,8 @@ node_dim = ns
 graph_sz = gs
 
 if(args.algorithm=='inst'):
-    TF = _transformer_inst(problem,
-                    embedding_dims,
+    TF = transformer_inst(problem,
+                    embedding_dim,
                     hidden_dim,
                     n_heads,
                     n_layers,
@@ -63,7 +63,7 @@ if(args.algorithm=='inst'):
                     args.trial)
 
 elif(args.algorithm=='Q'):
-    TF = _transformer_Q(problem,
+    TF = transformer_Q(problem,
                     embedding_dim,
                     hidden_dim,
                     n_heads,

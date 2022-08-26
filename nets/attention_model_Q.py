@@ -318,7 +318,7 @@ class transformer_Q():
         if((best_cost_taken[(gs//1)-1] < 1000) ):
             if((self.baseline.shape[0]==self.batch_sz*gs)):
                 self.baseline = torch.cat((self.baseline, self.baseline[0:gs,:].reshape(-1,1)), 0)
-            .#costs = torch.cat((costs, self.best_cost + torch.cumsum(self.best_cost, dim=0)), 0)
+            #costs = torch.cat((costs, self.best_cost + torch.cumsum(self.best_cost, dim=0)), 0)
             costs = torch.cat((costs, self.best_cost ), 0)
             probs = torch.cat((probs, prob_lst_best), 0)
 
