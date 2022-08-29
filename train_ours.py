@@ -78,7 +78,7 @@ elif(args.algorithm=='Q'):
                     args.trial)
 
 
-best_cost = 1500
+best_cost = 3000
 cost_array = []
 
 best_cost_taken_list = [best_cost for i in range(x.size(1))]  # define baseline costs

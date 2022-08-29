@@ -160,7 +160,8 @@ class transformer_Q():
         self.attn_model_baseline = AttentionModel(self.problem, self.embedding_dim, self.hidden_dim, self.n_heads, self.n_layers, self.normalization, self.device, self.mask, self.node_dim).to(self.device)
         self.hard_update(self.attn_model_baseline, self.attn_model)  # make the baseline equal to the current model
 
-        self.optimizer = Adam(self.attn_model.parameters(), lr=5e-5)
+        #self.optimizer = Adam(self.attn_model.parameters(), lr=1e-5)
+        self.optimizer = Adam(self.attn_model.parameters(), lr=1e-4)
         self.optimizer.param_groups[0]['capturable'] = True
 
         if('Lee' in self.prob_type):

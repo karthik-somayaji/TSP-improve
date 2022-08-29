@@ -237,6 +237,20 @@ class router():
         for net, src, tgt in nets:
             yield net, tuple(x*scale for x in src), tuple(x*scale for x in tgt)
 
+    def get_rand_point(self, n_i, n_j, s_i, s_j):
+        while True:
+            nn_i = n_i-s_i
+            nn_j = n_j-s_j
+            i = random.randrange( 0, nn_i)
+            j = random.randrange( 0, nn_j)
+            if (i,j) not in self.endpoints and (i+s_i,j+s_j) not in self.endpoints:
+                self.endpoints.add((i,j))
+                self.endpoints.add((i+s_i,j+s_j))
+                return (i,j), (i+s_i, j+s_j)
+
+    def get_lst(self):
+        return self.lst
+
     def examples(self, type_fn):
 
         lst = [
@@ -307,6 +321,25 @@ class router():
         elif('Lee' in type_fn):
             self.coords = coords
             self.lst = lst
+
+        elif('random' in type_fn):
+            self.endpoints = set()
+            self.lst=[]
+            #random.seed(1)
+            random.seed(9)
+            n_i, n_j = int(type_fn[7:9]), int(type_fn[10:12])
+            for k in range(int(type_fn[13:])):
+                s_i = random.randrange(1, 4)
+                s_j = random.randrange(1, 4)
+
+                self.lst.append( (str(k),) + self.get_rand_point(n_i, n_j, s_i, s_j))
+
+            self.coords = {}
+            temp = [ {a1:[(a2,a3), (a4,a5)]} for (a1, (a2,a3), (a4,a5)) in self.lst]
+            for d in temp:
+                self.coords.update(d)
+            #print('LST:', self.lst)
+
         
         
 

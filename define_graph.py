@@ -7,6 +7,8 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
+from problems.problem_lee1 import router
+
 #start_positions = [[5.5, 0.5], [4.5, 0.5], [2.5, 0.5], [1.5, 1.5], [2.5, 4.5], [5.5, 3.5], [4.5, 4.5], [7.5, 5.5], [4.5, 5.5], [0.5, 5.5]]
 #end_positions =   [[7.5, 2.5], [5.5, 1.5], [0.5, 2.5], [2.5, 5.5], [6.5, 5.5], [3.5, 6.5], [5.5, 6.5], [5.5, 7.5], [1.5, 6.5], [1.5, 7.5]]
 
@@ -33,6 +35,17 @@ class graph_structure():
 
             s = [(x*mult,y*mult) for (x,y) in start_positions]
             e = [(x*mult,y*mult) for (x,y) in end_positions]
+            start_positions = s.copy()
+            end_positions = e.copy()
+        
+        if('random' in type_fn):
+            n= int(type_fn[7:9])
+            m= int(type_fn[10:12])  
+            r_inst = router(n,m,type_fn)
+            lst = r_inst.get_lst()
+
+            s = [(b,c) for (a, (b,c), (d,e)) in lst]
+            e = [(d,e) for (a, (b,c), (d,e)) in lst]
             start_positions = s.copy()
             end_positions = e.copy()
 
@@ -66,7 +79,7 @@ class graph_structure():
 
         pos = {x:concat_list[x] for x in range(2*n)}
 
-        threshold_distance = 5.0 #5.0
+        threshold_distance = 6.0 #5.0
         adj_list = []
         feature_list = []
         adj_list_matrix = torch.zeros(n, n)
@@ -79,7 +92,7 @@ class graph_structure():
                 is_neighbor_3 = distance.euclidean([start_positions[i][0], start_positions[i][1]], [end_positions[j][0], end_positions[j][1]] ) <= threshold_distance
                 is_neighbor_4 = distance.euclidean([end_positions[i][0], end_positions[i][1]], [start_positions[j][0], start_positions[j][1]] ) <= threshold_distance
 
-                if(is_neighbor_1 or is_neighbor_2):# or is_neighbor_3 or is_neighbor_4):
+                if(is_neighbor_1 or is_neighbor_2 or is_neighbor_3 or is_neighbor_4):
                     adj_list.append([i,j])
                     adj_list_matrix[i,j] = 1.0
                 adj_list_matrix[i,j] = 1.0

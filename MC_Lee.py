@@ -300,6 +300,7 @@ if __name__ == "__main__":
     nets = [x for x in range(8,56,4)]
     print(nets)
     nets_mean_break_pts = []
+    nets_std_break_pts = []
 
     for net in nets:
         print('Analysing syn_4x', str(net) )
@@ -312,7 +313,9 @@ if __name__ == "__main__":
             break_point = main(4, int(num*2), lst, num_trials=args.num_trials, alg=args.alg, check=args.check, order=args.order)
             mean_break_pts.append(break_point)
         nets_mean_break_pts.append(statistics.mean(mean_break_pts)) 
+        nets_std_break_pts.append(statistics.stdev(mean_break_pts))
         
     nets_mean_break_pts = np.array(nets_mean_break_pts)
     print(nets_mean_break_pts)
-    np.savetxt('MC_all_nets.txt', nets_mean_break_pts )
+    np.savetxt('saved_files/MC_all_nets_mean.txt', nets_mean_break_pts )
+    np.savetxt('saved_files/MC_all_nets_std.txt', nets_std_break_pts )
