@@ -39,7 +39,7 @@ class MultiHeadAttention(nn.Module):
         self.embed_dim = embed_dim
         self.val_dim = val_dim
         self.key_dim = key_dim
-        self.mask = mask
+        self.mask = None
 
         self.norm_factor = 1 / math.sqrt(key_dim)  # See Attention is all you need
 
@@ -170,7 +170,7 @@ class MultiHeadDecoder(nn.Module):
             stdv = 1. / math.sqrt(param.size(-1))
             param.data.uniform_(-stdv, stdv)
 
-    def forward(self, q, l, context, g, mask, is_random, random_net):
+    def forward(self, q, mask):
         """
 
         :q - (batch_size, nodes, embed_dim)
@@ -184,7 +184,7 @@ class MultiHeadDecoder(nn.Module):
         :return: q_max (batch_size, 1, embed_dim); updated_mask(1, batch_size), likelihood(batch_size, 1)
         """
 
-        mask_copy = torch.Tensor.clone(mask)
+        #mask_copy = torch.Tensor.clone(mask)
 
         h = q  # compute self-attention
 
@@ -195,56 +195,32 @@ class MultiHeadDecoder(nn.Module):
         assert q.size(2) == input_dim
         #assert input_dim == self.input_dim, "Wrong embedding dimension of input"
 
-        l_context_concat = torch.cat((l, context), axis=1)  # (batch_size, 2, embed_dim)
-        l_context_concat_flat = l_context_concat.contiguous().view(-1, input_dim)
-
         # last dimension can be different for keys and values
         shp = (batch_size, graph_size, -1)
-        shp_q = (batch_size, 1, -1)
-        shp_concat = (batch_size, 1, input_dim)
-
-        concat = torch.matmul( self.W_context, l_context_concat_flat).view(shp_concat)
-        g_context_concat = torch.cat((g, concat), axis=1)  # (batch_size, 2, embed_dim)
-        g_context_concat_flat = g_context_concat.contiguous().view(-1, input_dim)
-
-        g_context = torch.matmul( self.W_graph, g_context_concat_flat).view(shp_concat)
 
         hflat = h.contiguous().view(-1, input_dim)
         qflat = q.contiguous().view(-1, input_dim)
-        g_contextflat = g_context.contiguous().view(-1, input_dim)
 
         # Calculate queries,(batch_size, 1, key/val_size)
-        Q = torch.matmul(g_contextflat, self.W_query).view(shp_q)
+        Q = torch.matmul(qflat, self.W_query).view(shp)
         # Calculate keys and values (batch_size, graph_size, key/val_size)
-        K = torch.matmul(qflat, self.W_key).view(shp)
+        K = torch.matmul(hflat, self.W_key).view(shp)
         #V = torch.matmul(hflat, self.W_val).view(shp)
 
         # Calculate compatibility ( batch_size, 1, graph_size)
         compatibility_raw = self.norm_factor * torch.matmul(Q, K.transpose(1, 2))
-        compatibility = torch.tanh(compatibility_raw) * 10.  # (batch_size, 1, graph_size)
+        compatibility = torch.tanh(compatibility_raw) * 10.  # (batch_size, graph_size, graph_size)
 
-        mask = mask.float()[:,None,:]  # add extra dimension to match compatibilty's dimension
-        compatibility[mask<=0.1] = -np.inf
+        #mask = mask.float()[:,None,:]  # add extra dimension to match compatibilty's dimension
+        mask = mask.repeat(1,1,1)
+        compatibility[mask==0.0] = -np.inf
+        shp_attn = (batch_size, graph_size, graph_size)
 
-       
-        #masked_compatibility = torch.multiply(mask, compatibility)  # (batch_size, 1 , graph_size)
-        masked_compatibility = compatibility
+        compatibility_flatten = compatibility.view(batch_size, -1)
+        log_soft = F.log_softmax(compatibility_flatten,dim = -1).view(shp_attn)
+        soft = F.softmax(compatibility_flatten,dim = -1).view(shp_attn)
 
-        softMax = F.softmax(masked_compatibility, dim=2)  # (batch_size, 1 , graph_size)
-        #print(softMax.squeeze(1).detach())
-        log_softMax = F.log_softmax(masked_compatibility, dim=2)  # (batch_size, 1 , graph_size)
-        if(not is_random):
-            max_indx = torch.argmax(softMax, axis=2)  # (batch_size, 1)
-        else:
-            max_indx = random_net
-
-        q_max = q[range(q.size(0)), max_indx.squeeze(),:][:,None,:]  # (batch_size, 1, embed_dim)
-        attn_max = softMax[range(q.size(0)), :, max_indx.squeeze()].view(batch_size, 1)  # (batch_size, 1)
-        log_attn_max = log_softMax[range(q.size(0)), :, max_indx.squeeze()].view(batch_size, 1)  # (batch_size, 1)
-
-        #mask_copy[range(q.size(0)), max_indx.squeeze()] = 0.0  # update the masking matrix
-
-        return q_max, attn_max, log_attn_max, concat, mask_copy, max_indx
+        return soft, log_soft
 
 
 class Normalization(nn.Module):
@@ -325,5 +301,5 @@ class EmbeddingNet(nn.Module):
         self.embedder = nn.Linear(node_dim, embedding_dim)
         
     def forward(self, x, solutions):
-        #pos_enc = position_encoding(solutions, self.embedding_dim, self.device)
-        return self.embedder(x) #+ pos_enc.cpu()
+        pos_enc = position_encoding(solutions, self.embedding_dim, self.device)
+        return self.embedder(x) + pos_enc.cpu()

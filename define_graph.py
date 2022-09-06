@@ -94,7 +94,7 @@ class graph_structure():
                 net_num[i] = 1.0
                 net_num = net_num.tolist()  
                 #feature = [start_positions[i][0], start_positions[i][1], MD_y, MD_x ] + net_num
-                feature = [start_positions[i][0], start_positions[i][1], end_positions[i][0], end_positions[i][1] ] + net_num
+                feature = [start_positions[i][0], start_positions[i][1], end_positions[i][0], end_positions[i][1] ] #+ net_num
                 #feature = [start_positions[i][0], start_positions[i][1]] + net_num
             feature_list.append(feature)
 
